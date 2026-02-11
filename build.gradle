@@ -64,11 +64,11 @@ dependencies {
     minecraft 'net.minecraftforge:forge:1.19.2-43.2.13'
 
     // Sophisticated Backpacks Dependency
-    // 1.19.2-3.18.59.913
-    implementation fg.deobf("curse.maven:sophisticated-backpacks-422301:4679350")
+    // 1.19.2-3.18.40.779
+    implementation fg.deobf("curse.maven:sophisticated-backpacks-422301:4329957")
     // Sophisticated Core Dependency
-    // 1.19.2-0.5.91.432
-    implementation fg.deobf("curse.maven:sophisticated-core-618298:4679346")
+    // 1.19.2-0.5.38.203
+    implementation fg.deobf("curse.maven:sophisticated-core-618298:4329953")
     implementation fg.deobf("top.theillusivec4.curios:curios-forge:1.19.2-5.1.4.3")
 }
 

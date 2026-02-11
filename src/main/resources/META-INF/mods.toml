@@ -1,0 +1,33 @@
+modLoader="javafml"
+loaderVersion="[43,)"
+license="MIT"
+
+[[mods]]
+modId="sbpaddon"
+version="1.0.0"
+displayName="Sophisticated Backpacks Addon"
+authors="Example"
+description='''
+Adds a button to deposit items from any container into your backpack.
+'''
+
+[[dependencies.sbpaddon]]
+    modId="forge"
+    mandatory=true
+    versionRange="[43,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.sbpaddon]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.19.2,1.20)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.sbpaddon]]
+    modId="sophisticatedbackpacks"
+    mandatory=true
+    versionRange="[3.18,)"
+    ordering="AFTER"
+    side="BOTH"

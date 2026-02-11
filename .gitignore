@@ -1,0 +1,15 @@
+.gradle
+build/
+bin/
+run/
+.settings/
+.project
+.classpath
+.metadata
+*.iml
+*.ipr
+*.iws
+.idea/
+out/
+gradle.properties
+!gradle-wrapper.properties

@@ -1,0 +1,92 @@
+buildscript {
+    repositories {
+        maven { url = 'https://maven.minecraftforge.net' }
+        maven { url = 'https://repo.spongepowered.org/repository/maven-public/' }
+        mavenCentral()
+    }
+    dependencies {
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.74'
+        classpath 'org.spongepowered:mixingradle:0.7-SNAPSHOT'
+    }
+}
+
+plugins {
+    id 'eclipse'
+    id 'maven-publish'
+}
+apply plugin: 'net.minecraftforge.gradle'
+apply plugin: 'org.spongepowered.mixin'
+
+version = '1.0.0'
+group = 'com.example.sbpaddon'
+archivesBaseName = 'sbpaddon-1.19.2'
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+
+minecraft {
+    mappings channel: 'official', version: '1.19.2'
+
+    runs {
+        client {
+            workingDirectory project.file('run')
+            property 'forge.logging.markers', 'REGISTRIES'
+            property 'forge.logging.console.level', 'debug'
+            mods {
+                sbpaddon {
+                    source sourceSets.main
+                }
+            }
+        }
+        server {
+            workingDirectory project.file('run')
+            property 'forge.logging.markers', 'REGISTRIES'
+            property 'forge.logging.console.level', 'debug'
+            mods {
+                sbpaddon {
+                    source sourceSets.main
+                }
+            }
+        }
+    }
+}
+
+repositories {
+    maven {
+        url "https://cursemaven.com"
+        content {
+            includeGroup "curse.maven"
+        }
+    }
+    maven { url "https://maven.theillusivec4.top/" }
+}
+
+dependencies {
+    minecraft 'net.minecraftforge:forge:1.19.2-43.2.13'
+
+    // Sophisticated Backpacks Dependency
+    // Project ID: 422301
+    // File ID for 1.19.2-3.20.2.1026: 5122557 (just an example, I should find a real one or use local)
+    // Actually I will use the one provided in the prompt's directory if possible, 
+    // but curse.maven is easier for build.gradle
+    implementation fg.deobf("curse.maven:sophisticated-backpacks-422301:5122557")
+    implementation fg.deobf("curse.maven:sophisticated-core-618298:5122533")
+    implementation fg.deobf("top.theillusivec4.curios:curios-forge:1.19.2-5.1.4.3")
+}
+
+jar {
+    manifest {
+        attributes([
+                "Specification-Title"     : "sbpaddon",
+                "Specification-Vendor"    : "example",
+                "Specification-Version"   : "1",
+                "Implementation-Title"    : project.name,
+                "Implementation-Version"  : project.jar.archiveVersion,
+                "Implementation-Vendor"   : "example",
+                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+        ])
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}

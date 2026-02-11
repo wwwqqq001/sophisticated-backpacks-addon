@@ -28,6 +28,6 @@ Adds a button to deposit items from any container into your backpack.
 [[dependencies.sbpaddon]]
     modId="sophisticatedbackpacks"
     mandatory=true
-    versionRange="[3.18,)"
+    versionRange="[1.19.2-3.18,)"
     ordering="AFTER"
     side="BOTH"

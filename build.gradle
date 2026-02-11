@@ -64,12 +64,11 @@ dependencies {
     minecraft 'net.minecraftforge:forge:1.19.2-43.2.13'
 
     // Sophisticated Backpacks Dependency
-    // Project ID: 422301
-    // File ID for 1.19.2-3.20.2.1026: 5122557 (just an example, I should find a real one or use local)
-    // Actually I will use the one provided in the prompt's directory if possible, 
-    // but curse.maven is easier for build.gradle
-    implementation fg.deobf("curse.maven:sophisticated-backpacks-422301:5122557")
-    implementation fg.deobf("curse.maven:sophisticated-core-618298:5122533")
+    // 1.19.2-3.18.59.913
+    implementation fg.deobf("curse.maven:sophisticated-backpacks-422301:4679350")
+    // Sophisticated Core Dependency
+    // 1.19.2-0.5.91.432
+    implementation fg.deobf("curse.maven:sophisticated-core-618298:4679346")
     implementation fg.deobf("top.theillusivec4.curios:curios-forge:1.19.2-5.1.4.3")
 }
 
